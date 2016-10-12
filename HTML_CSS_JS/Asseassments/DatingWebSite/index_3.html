@@ -45,19 +45,28 @@
             color: white;
             padding: 4px;
         }
+
+        label:hover {
+            font-size: 22px;
+        }
+
+        input:hover {
+            font-size: 22px;
+        }
     </style>
 </head>
 
 <body>
     <h2>Please Enter Your Details For Our Dating Website!</h2>
     <form class="" action="index.html" method="post">
+
         <fieldset>
             <legend>Your Face</legend>
             <label for="avatar">Your image:</label>
             <input type="file" id="avatar" name="avatar" value="" required>
             <br>
             <label for="preview">Image preview:</label>
-            <img src="" alt="" id="preview" />
+            <img src=""  id="preview" width=120px />
         </fieldset>
 
         <fieldset>
@@ -117,8 +126,10 @@
             <input type="checkbox" id="contact_method" name="contact_method" value="in_app_chat">
             <label for="in_app_chat" id="contact_method_label">In-app chat</label>
         </fieldset>
+
         <input type="submit" name="submit_button" value="Submit">
     </form>
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
 </body>
 
 </html>

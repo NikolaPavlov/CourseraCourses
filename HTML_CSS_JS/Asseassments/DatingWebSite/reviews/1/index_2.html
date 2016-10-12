@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Online Dating!</title>
+    <meta name="author" content="Saroj Sharma" />
+    <style media="screen">
+      fieldset{
+        background: lightyellow;
+        border: 10px solid yellow;
+        margin-bottom: 10px;
+        width: 720px;
+      }
+      label{
+        width: 180px;
+        display: inline-block;
+        text-align: right;
+        vertical-align: top;
+      }
+      textarea{
+        width: 360px;
+        height: 50px;
+      }
+      span{
+        text-align: center;
+      }
+      .less{
+        background: red;
+      }
+      .more{
+        background: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Please Enter Your Details For Our Dating Website!</h1>
+    </header>
+    <div>
+      <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data" method="post">
+        <fieldset>
+          <legend>Your Face</legend>
+          <label for="avatar">Your Image:</label>
+          <input type="file" name="avatar" id="avatar" required /><br>
+          <label for="preview">Image Preview:</label>
+          <img src="" alt="" id="preview"/>
+        </fieldset>
+        <fieldset>
+          <legend>Your general details</legend>
+
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" placeholder="Your Full Name" required="" /><br>
+
+          <label for="gender">Gender:</label>
+          <input type="radio" name="gender" id="gender" required="" />Male
+          <input type="radio" name="gender" id="gender" required="" />Female <br>
+
+          <label for="age">Age:</label>
+          <input type="number" name="age" id="age" value="18" required="" /><br>
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" name="dob" id="dob" /><br>
+
+          <label for="color">Favorite Color:</label>
+          <input type="color" name="color" id="color" /><br>
+
+          <label for="country">Which Country:</label>
+          <select class="country" name="country" id="country">
+            <option value="no selection">Any Where in the world</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="germany">Germany</option>
+            <option value="russia">Russia</option>
+            <option value="china">China</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Indicator</legend>
+          <label for="height">Height:</label>
+          <span class="less">Short</span><input type="range" name="height" id="height" min="0" max="100" value="50" /><span class="more">Tall</span> <br>
+          <label for="salary">Salary:</label>
+          <span class="less">Poor</span><input type="range" name="salary" id="salary" min="0" max="100" value="50" /><span class="more">Rich</span> <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Contact Information</legend>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required="" /><br>
+
+          <label for="mobile">Mobile:</label>
+          <input type="tel" name="mobile" id="mobile" /><br>
+
+          <label for="address">Address:</label>
+          <textarea name="address" id="address" rows="3" cols="25"></textarea><br>
+
+          <label for="contact">Method to Contact You:</label>
+          <input type="checkbox" name="contact" id="contact" value="email" />Email
+          <input type="checkbox" name="contact" id="contact" value="whatsapp" />Whatsapp
+          <input type="checkbox" name="contact" id="contact" value="appchat" />In-app-Chat
+        </fieldset>
+
+        <input type="submit"  value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

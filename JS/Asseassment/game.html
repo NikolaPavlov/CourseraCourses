@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>ColorGame</title>
+    <script type="text/javascript">
+        var color_names = ['aqua', 'black', 'blue', 'chocolate', 'coral',
+            'darkKhaki', 'fuchsia', 'gold', 'khaki', 'levander', 'magenta',
+            'olive', 'pink', 'red', 'tan', 'white'
+        ];
+        var target_index; // generated random number
+        var target; // random color from the color_names array
+        var guess_input; // input from the user
+        var finished = false;
+        var guesses = 0; // the number of guesses user made
+
+        var length_of_col_names = color_names.length;
+        function do_game() {
+            target_index = Math.floor(Math.random() * length_of_col_names);
+            target = color_names[target_index];
+            // the color chosed by the comp is printed in the browser console
+            console.log('comp chose target: ' + target);
+
+            while (!finished) {
+                guess_input = prompt("I am thinking of one of these colors: " + color_names.toString());
+                guesses += 1;
+                finished = check_guess();
+            }
+        }
+
+        function check_guess() {
+            // check if the guess_input is in the color_names array
+            if (isNotInArray(guess_input, color_names)) {
+                alert("Sorry, I don't recognize your color. \n\n" +
+                    "Please try again.");
+                return false;
+            }
+
+            // input color of the user is alphabeticly higher than the target
+            if (guess_input < target) {
+                alert("Sorry, your guess is not correct!\n\n" +
+                "Hint: your color is alphabeticly higher than mine.\n\n" +
+                "Please try again.")
+                return false;
+            }
+
+            // input color of the user is alphabeticly lower than the target
+            if (guess_input > target) {
+                alert("Sorry, your guess is not correct!\n\n" +
+                    "Hint: your color is alphabeticly lower than mine.\n\n" +
+                    "Please try again.")
+                return false;
+            }
+
+            // correct
+            if (guess_input == target) {
+                document.body.style.backgroundColor = target;
+                alert("Congratulations! You have guessed the color!\n\n" +
+                    "It took you " + guesses + " guesses to finish the game!\n\n" +
+                    "You can see the color in the background.")
+                return true;
+            }
+        }
+
+        function isNotInArray(value, arr) {
+            // return true if value is not in the arr
+            if (arr.indexOf(value) == -1) {
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body onload="do_game()">
+</body>
+
+</html>

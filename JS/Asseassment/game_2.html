@@ -20,10 +20,12 @@
             target_index = Math.floor(Math.random() * length_of_col_names);
             target = color_names[target_index];
             // the color chosed by the comp is printed in the browser console
-            console.log('comp chose target: ' + target);
+            alert('comp choose target: ' + target);
 
             while (!finished) {
-                guess_input = prompt("I am thinking of one of these colors: " + color_names.toString());
+                guess_input = prompt("I am thinking of one of these colors:\n\n" +
+                color_names.toString() + "\n\n" +
+                "Which color am I thinking of?");
                 guesses += 1;
                 finished = check_guess();
             }

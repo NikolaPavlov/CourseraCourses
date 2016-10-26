@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Amazing JS Guessing Game!</title>
+</head>
+
+<body onload="game()">
+    <script>
+    var target;
+    var guess_input_text;
+    var guess_input;
+    var finished = false;
+    var guesses = 0;
+    var colors;
+
+    function game() {
+        colors = ["blue", "yellow", "purple", "green", "red"];
+        var random_number = Math.random() * 5;
+        var random_number_integer = Math.floor(random_number)
+        target = colors[random_number_integer]
+        alert("The target is " + target);
+
+        while (!finished) {
+            guess_input_text = prompt("I am thinking of a color:\n\n" +
+            "blue, yellow, purple, green, red\n\n" + "What color I am thinking?")
+            guess_input = guess_input_text;
+            guesses += 1;
+            finished = guess();
+        }
+    }
+
+    function guess() {
+        if (guess_input != target){
+            alert("Please try again.");
+            return false;}
+        return true;
+    }
+    </script>
+</body>
+
+</html>

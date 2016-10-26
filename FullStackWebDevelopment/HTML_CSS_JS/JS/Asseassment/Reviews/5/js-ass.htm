@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Javascript</title>
+    <script type="text/javascript">
+
+        var target;
+        var guess_input_text;
+        var guess_input;
+        var finished = false;
+        var guesses = 0;
+        var colors = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "yellow"];
+        var bg_colors ;
+
+        function do_game() {
+            var random_number = Math.random() * 9;
+            var random_number_integer = Math.floor(random_number);
+            target = random_number_integer ;
+            bg_colors = colors[target];
+
+           // alert(bg_colors);
+            
+
+            while (!finished) {
+                guess_input_text = prompt("I am thinking of these colors:\n\n blue, cyan , gold, gray, green, magenta, orange, red and yellow  \n\n What color am I thinking of?");
+
+                guess_input = guess_input_text.toLowerCase();
+                guesses += 1;
+                finished = check_guess();
+              
+            }
+
+        }
+
+        function check_guess() {
+
+            var i = 0;
+           
+                for (; i<colors.length; i++){
+                    if (colors[i] == guess_input) {
+
+                        break;
+                    }
+                
+                }
+
+
+            if ((i<0 )||(i>8) ) {
+                alert(" Sorry I don't recgonize your color \n\n Please try again. ");
+                return false;
+            }
+
+            if (i>target) {
+                alert("Sorry your guess is not correct!\n\n Hint:your color is alphabetically higher than mine.\n\n Please try again.");
+                return false;
+            }
+
+            if (i < target) {
+                alert("Sorry your guess is not correct!\n\n Hint:your color is alphabetically lower than mine.\n\n Please try again.");
+                return false;
+            }
+            document.getElementById('id1').style.background = bg_colors;
+            alert("Congratulations! You have guessed the color.\n\nIt took you " + guesses + " guesses to finish the game! \n\n You can see the color in background");
+            return true;
+        }
+           </script>
+    
+    
+    
+    
+</head>
+<body onload="do_game()" id="id1">
+
+</body>
+</html>

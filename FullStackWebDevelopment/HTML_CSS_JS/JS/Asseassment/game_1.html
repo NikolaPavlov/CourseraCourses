@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>ColorGame</title>
+    <script type="text/javascript">
+        var color_names = ['aqua', 'black', 'blue', 'chocolate', 'coral',
+            'darkKhaki', 'fuchsia', 'gold', 'khaki', 'levander', 'magenta',
+            'olive', 'pink', 'red', 'tan', 'white'
+        ];
+        var target_index; // generated random number
+        var target; // random color from the color_names array
+        var guess_input; // input from the user
+        var finished = false;
+
+        var length_of_col_names = color_names.length;
+
+        function do_game() {
+            target_index = Math.floor(Math.random() * length_of_col_names);
+            target = color_names[target_index];
+            // the color chosed by the comp is printed in the browser console
+            alert('comp chose target: ' + target);
+
+            while (!finished) {
+                guess_input = prompt("I am thinking of one of these colors:\n\n" +
+                    color_names.toString() + "\n\n" +
+                    "Which color am I thinking of?");
+                finished = check_guess();
+            }
+        }
+
+        function check_guess() {
+            // correct answer is made
+            if (guess_input == target) {
+                alert("Congratulations! You have guessed the color!")
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body onload="do_game()">
+</body>
+
+</html>

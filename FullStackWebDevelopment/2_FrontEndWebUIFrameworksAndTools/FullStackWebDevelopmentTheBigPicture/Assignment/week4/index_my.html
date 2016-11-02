@@ -55,8 +55,9 @@
                                                            aria-hidden="true"></span> Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a data-toggle="modal" data-target="#loginModal">
-                                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        <li>
+                            <a id="loginButton" role="button">
+                                                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
                         </li>
                     </ul>
                 </div>
@@ -211,8 +212,8 @@
                     <!-- button to the reservation -->
                     <div class="col-xs-12 col-sm-2">
                         <p style="padding:30px"></p>
-                        <a data-toggle="modal" data-target="#reserveModal" role="button" type="button"
-                                                                                         class="btn btn-warning btn-block">Reserve table</a>
+                        <a id="reserveButton" type="button" role="button"
+                            class="btn btn-warning btn-block">Reserve table</a>
                     </div>
 
                 </div>
@@ -407,21 +408,20 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <!-- activating tooltip with the next js  -->
         <script>
-            $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-
-            $(document).ready(function(){
-                $(#mycarousel).carousel( { interval: 2000 } );
-
-                $(#carousel-pause).click(function(){
-                    $(#mycarousel).carousel("pause");
-                })
-
-                $(#carousel-play).click(function(){
-                    $(#mycarousel).carousel("cycle");
+            $(document).ready(function () {
+                $("#mycarousel").carousel({interval: 2000});
+                $("#carousel-pause").click(function () {
+                    $("#mycarousel").carousel('pause');
+                });
+                $("#carousel-play").click(function () {
+                    $("#mycarousel").carousel('cycle');
+                });
+                $("#loginButton").click(function () {
+                    $("#loginModal").modal("show");
+                });
+                $("#reserveButton").click(function () {
+                    $("#reserveModal").modal("show");
                 });
             });
         </script>

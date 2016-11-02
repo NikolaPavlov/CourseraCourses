@@ -1,0 +1,26 @@
+{
+  "name": "week4_conFusion",
+  "homepage": "https://github.com/NikolaPavlov/CourseraCourses",
+  "authors": [
+    "NikolaPavlov <nikola.pavlov1955@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "keywords": [
+    "conFusion",
+    "Fusion",
+    "Restaurant"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "font-awsome#^4.7.0"
+  }
+}

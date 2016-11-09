@@ -9,5 +9,3 @@ Courses I take at coursera
     - Front-End Web UI Frameworks and Tools *
     - AngularJs
 2. Algorithms
-3. Startup Enterpreneurship
-    - Cracking the creativity code: Disovering ideas

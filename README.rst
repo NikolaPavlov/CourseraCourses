@@ -9,3 +9,4 @@ Courses I take at coursera
     - Front-End Web UI Frameworks and Tools *
     - AngularJs
 2. Algorithms
+   - Divide and Conquer, Sorting and Searching, and Randomized Algorithms

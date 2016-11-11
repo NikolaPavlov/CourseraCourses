@@ -62,6 +62,12 @@ angular.module('confusionApp', []).controller('MenuController',['$scope', functi
       $scope.filtText = "";
     }
   };
+
+  $scope.showDetails = false;
+
+    $scope.toggleDetails = function() {
+        $scope.showDetails = !$scope.showDetails;
+    }
   
   $scope.isSelected = function (checkTab) {
     return ($scope.tab === checkTab);
